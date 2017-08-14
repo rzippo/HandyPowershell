@@ -3,9 +3,6 @@ param(
 	[parameter(Mandatory=$true)][System.Collections.ArrayList]$expressions
 )
 
-#$expressionsToRun = New-Object System.Collections.ArrayList;
-#$expressionsToRun.AddRange($expressions);
-
 while( $expressions.Count -gt 0 )
 {
 	$runningJobs = @(Get-Job | Where-Object { $_.State -eq 'Running' });
